@@ -9,13 +9,11 @@ const ingredients = [
 
 const ingredientsList = document.getElementById("ingredients");
 
-ingredients.forEach((ingredient) => {
-  const li = document.createElement("li");
-  li.textContent = ingredient;
-  li.classList.add("item");
-  ingredientsList.appendChild(li);
-});
+const ingredientsHTML = ingredients.map((ingredient) => {
+  return `<li class="item">${ingredient}</li>`;
+}).join("");
 
+ingredientsList.innerHTML = ingredientsHTML;
 
 
 
