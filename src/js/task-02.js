@@ -8,12 +8,14 @@ const ingredients = [
 ];
 
 const ingredientsList = document.getElementById("ingredients");
+const liElements = ingredients.map((ingredient) => {
+  const li = document.createElement("li");
+  li.classList.add("item");
+  li.textContent = ingredient;
+  return li;
+});
 
-const ingredientsHTML = ingredients.map((ingredient) => {
-  return `<li class="item">${ingredient}</li>`;
-}).join("");
-
-ingredientsList.innerHTML = ingredientsHTML;
+ingredientsList.append(...liElements);
 
 
 
